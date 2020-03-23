@@ -23,7 +23,7 @@ public:
 		cout << "Printing Whole Stack, starting from top:" << endl;
 		Node<T>* trav = top;
 		while (trav) {
-			cout << trav->getItem();
+			cout << trav->getItem() << "  ";
 			trav = trav->getNext();
 		}
 	}
