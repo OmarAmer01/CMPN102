@@ -1,7 +1,7 @@
 //#include "Drawing.h"
 #include "Rest\Restaurant.h"
 #include "GUI\GUI.h"
-
+#include"Generic_DS/Queue.h"
 int main()
 {
 	
@@ -11,4 +11,6 @@ int main()
 	delete pRest;
 	
 	return 0;
+
+	
 }

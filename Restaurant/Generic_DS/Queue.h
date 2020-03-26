@@ -54,6 +54,7 @@ private:
 	Node<T>* frontPtr;
 public:
 	Queue();
+	Queue( const Queue<T>&);
 	bool isEmpty() const;
 	bool enqueue(const T& newEntry);
 	bool dequeue(T& frntEntry);
@@ -76,6 +77,19 @@ Queue<T>::Queue()	//CTOR makes an empty queue
 {
 	backPtr = nullptr;
 	frontPtr = nullptr;
+
+}
+
+
+template<typename T>
+Queue<T>::Queue(const Queue<T>& src ) {
+	frontPtr = nullptr;
+	backPtr = nullptr;
+	Node<T>* pNode = src.frontPtr;
+	while (pNode) {
+		enqueue(pNode->getItem());
+		pNode = pNode->getNext();
+	}
 
 }
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -220,8 +234,9 @@ T* Queue<T>::toArray(int& count)
 template <typename T>
 void Queue<T>::printQueueData() {
 	Node<T>* trav = frontPtr;
-	while (trav->getNext()) {
+	while (trav) {
 		trav->printNodeInfo();
+		trav = trav->getNext();
 	}
 }
 
