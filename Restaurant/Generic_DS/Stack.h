@@ -37,6 +37,9 @@ public:
 		T poppedData;
 		poppedData = data.getHead()->getItem();
 		data.DeleteFirst();
+		if(isEmpty()==true){
+			return;
+		}
 		top = data.getHead();
 		return poppedData;
 	}
