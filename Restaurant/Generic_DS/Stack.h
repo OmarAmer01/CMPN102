@@ -14,6 +14,22 @@ public:
 		data.setHead(top);
 	}
 
+	Stack(const Stack<T>& src) {
+		Node<T>* trav = src.top;
+		Stack<T> aux;
+		top = nullptr;
+		data.setHead(top);
+		while (trav) {
+			aux.push(trav->getItem());
+			trav = trav->getNext();
+		}
+		trav = aux.top;
+		while (trav) {
+			push(trav->getItem());
+			trav = trav->getNext();
+		}
+	}
+
 	~Stack() { 
 		top = nullptr;
 		data.DeleteAll();

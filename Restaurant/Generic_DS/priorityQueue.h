@@ -11,7 +11,21 @@ public:
 		frontPtr = nullptr;
 		backPtr = nullptr;
 	}
+	
 
+
+	priorityQueue<T>(const priorityQueue<T>& src) {
+		frontPtr = nullptr;
+		backPtr = nullptr;
+		rNode<T>* pNode = src.frontPtr;
+		
+		while (pNode) {
+			enqueue(pNode->getItem(),pNode->getPriority());
+			pNode = pNode->getNext();
+			
+		}
+
+	}
 
 	//T getHighestPriority() {
 	//	rNode<T>* trav = frontPtr;
@@ -108,6 +122,8 @@ public:
 
 
 	}
+
+
 
 	bool isEmpty() const
 	{
