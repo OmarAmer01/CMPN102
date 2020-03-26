@@ -33,15 +33,17 @@ public:
 		top = data.getHead();
 	}
 
-	T pop() { // Gets the data we want to extract from the Linkedlist, deletes the first node of the Linkedlist and returns the data.
+	bool pop(T& popped) { // Gets the data we want to extract from the Linkedlist, deletes the first node of the Linkedlist and returns the data.
+		if (isEmpty() == true) {
+			return false;
+		}
 		T poppedData;
 		poppedData = data.getHead()->getItem();
 		data.DeleteFirst();
-		if(isEmpty()==true){
-			return;
-		}
+		
 		top = data.getHead();
-		return poppedData;
+		popped = poppedData;
+		return true;
 	}
 
 	T peek() { // Just makes a pointer to the top of the stack and returns it.
