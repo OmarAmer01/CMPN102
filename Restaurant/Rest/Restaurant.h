@@ -28,7 +28,7 @@ private:
 	//
 	// TODO: Add More Data Members As Needed
 	//
-	//AY 7AGAAAAAAA
+	
 public:
 	
 	Restaurant();
