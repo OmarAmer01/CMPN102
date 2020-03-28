@@ -79,6 +79,8 @@ void Restaurant::FillDrawingList()
 
 //Begin of DEMO-related functions
 
+
+
 //This is just a demo function for project introductory phase
 //It should be removed starting phase 1
 void Restaurant::Just_A_Demo()
