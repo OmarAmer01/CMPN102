@@ -88,17 +88,17 @@ void Restaurant::AddEvents(Event* ev)
 
 void Restaurant::AddToVeganQueue(Order* po)
 {
-	veganArray[po->GetType()].enqueue(po);
+	VEGANOrder.enqueue(po);
 }
 
 void Restaurant::AddNormalToList(Order* po)
 {
-	normalArray[po->GetType()].InsertEnd(po);
+	normalorder.InsertEnd(po);
 }
 
 void Restaurant::AddToVIPArray(Order* ord, double a)
 {
-	VIP_Array[ord->GetType()].enqueue(ord,a);
+	VIPorder.enqueue(ord,a);
 }
 
 ORD_TYPE Restaurant::Getordertype(char ordtype)
