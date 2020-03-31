@@ -30,22 +30,25 @@ private:
 	//
 	// TODO: Add More Data Members As Needed
 	//
-	Queue<Order*>veganArray[TYPE_CNT];  // array of vegan queues
-	LinkedList<Order*>normalArray[TYPE_CNT]; // array of vip linkedlist
-	priorityQueue<Order*>VIP_Array[TYPE_CNT]; // array of priority queue of vip
-	int timeStep;  
-	int VIPSpeed;     //speed of vip cook
-	int NormalSpeed;    //speed of normal cook
-	int VeganSpeed;   //speed of vegan cook
-	int vipcooks;   // no. of vip cooks
-	int normalcooks;  // no. of normal cooks
-	int vegancooks;  // no. of vegan cooks
-	int orde_to_break;  // the number of orders a cook must prepare before taking a break
-	int VIP_break_duration;
-	int normal_break_duration;
-	int vegan_break_duration;
-	int AutoP;
-	int Event_nom;
+	Queue<Order*> VEGANOrder;  //  vegan queues
+	LinkedList<Order*>normalorder; //  vip linkedlist
+	priorityQueue<Order*>VIPorder; // priority queue of vip
+	Queue<Cook*>VIPcook;
+	Queue<Cook*>NORMALcook;
+	Queue<Cook*>VEGANcook;
+	int TS;  //timestep
+	int SV;     //speed of vip cook
+	int SN;    //speed of normal cook
+	int SG;   //speed of vegan cook
+	int V;   // no. of vip cooks
+	int N;  // no. of normal cooks
+	int G;  // no. of vegan cooks
+	int BO;  // the number of orders a cook must prepare before taking a break
+	int BN;  //BREAK DURATION FOR NORMAL
+	int BG;   //BREAK DURATION FOR VEGAN
+	int BV;   //BREAK DURATION FOR VIP
+	int AutoP;    //TIME TO PROMOT NORMAL ORDER TP VIP
+	int M;
 
 public:
 	
