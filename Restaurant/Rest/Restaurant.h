@@ -5,6 +5,8 @@
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 #include "..\GUI\GUI.h"
 #include "..\Generic_DS\Queue.h"
+#include "..\Generic_DS\LinkedList.h"
+#include "..\Generic_DS\priorityQueue.h"
 #include "..\Events\Event.h"
 
 
@@ -28,7 +30,23 @@ private:
 	//
 	// TODO: Add More Data Members As Needed
 	//
-	
+	Queue<Order*>veganArray[TYPE_CNT];  // array of vegan queues
+	LinkedList<Order*>normalArray[TYPE_CNT]; // array of vip linkedlist
+	priorityQueue<Order*>VIP_Array[TYPE_CNT]; // array of priority queue of vip
+	int timeStep;  
+	int VIPSpeed;     //speed of vip cook
+	int NormalSpeed;    //speed of normal cook
+	int VeganSpeed;   //speed of vegan cook
+	int vipcooks;   // no. of vip cooks
+	int normalcooks;  // no. of normal cooks
+	int vegancooks;  // no. of vegan cooks
+	int orde_to_break;  // the number of orders a cook must prepare before taking a break
+	int VIP_break_duration;
+	int normal_break_duration;
+	int vegan_break_duration;
+	int AutoP;
+	int Event_nom;
+
 public:
 	
 	Restaurant();
@@ -44,9 +62,14 @@ public:
 
 	//
 	// TODO: Add More Member Functions As Needed
-	//
-	
-
+	void AddEvents(Event* ev); // add event to queue
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	void AddToVeganQueue(Order* po); // add frozen to queue
+	void AddNormalToList(Order* po); // add normal order to list
+	void AddToVIPArray(Order* ord, double a);  //add to vip array
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	ORD_TYPE Getordertype(char ordtype);   // convert the char to the order type
+	void CancelNormal(int id);  // lsa mat3amlsh
 /// ===================    DEMO-related functions. Should be removed in phases 1&2   ================= 
 
 	void Just_A_Demo();	//just to show a demo and should be removed in phase1 1 & 2

@@ -114,9 +114,6 @@
     <ClInclude Include="Generic_DS\Stack.h">
       <Filter>Generic_DS</Filter>
     </ClInclude>
-    <ClInclude Include="priorityQueue.h">
-      <Filter>Restaurant</Filter>
-    </ClInclude>
     <ClInclude Include="Generic_DS\priorityQueue.h">
       <Filter>Generic_DS</Filter>
     </ClInclude>

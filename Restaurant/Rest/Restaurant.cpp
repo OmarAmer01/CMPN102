@@ -81,6 +81,42 @@ void Restaurant::FillDrawingList()
 
 
 
+void Restaurant::AddEvents(Event* ev)
+{
+	EventsQueue.enqueue(ev);
+}
+
+void Restaurant::AddToVeganQueue(Order* po)
+{
+	veganArray[po->GetType()].enqueue(po);
+}
+
+void Restaurant::AddNormalToList(Order* po)
+{
+	normalArray[po->GetType()].InsertEnd(po);
+}
+
+void Restaurant::AddToVIPArray(Order* ord, double a)
+{
+	VIP_Array[ord->GetType()].enqueue(ord,a);
+}
+
+ORD_TYPE Restaurant::Getordertype(char ordtype)
+{
+	if (ordtype == 'V')
+		return TYPE_VIP;
+	else if (ordtype == 'N')
+		return TYPE_NRM;
+	else if (ordtype == 'G')
+		return TYPE_VGAN;
+	
+}
+
+void Restaurant::CancelNormal(int id)
+{
+	// lsa cancel of order 
+}
+
 //This is just a demo function for project introductory phase
 //It should be removed starting phase 1
 void Restaurant::Just_A_Demo()
