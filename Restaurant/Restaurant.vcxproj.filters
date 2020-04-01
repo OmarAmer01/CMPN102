@@ -123,6 +123,9 @@
     <ClInclude Include="Cancellation_event.h">
       <Filter>Events</Filter>
     </ClInclude>
+    <ClInclude Include="PromotionEvent.h">
+      <Filter>Restaurant</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Demo_Main.cpp" />
@@ -252,6 +255,7 @@
     <ClCompile Include="Cancellation_event.cpp">
       <Filter>Events</Filter>
     </ClCompile>
+    <ClCompile Include="PromotionEvent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMUgraphicsLib\Manual.txt">

@@ -12,9 +12,9 @@ class ArrivalEvent: public Event
 	int OrdDistance;	//order distance
 	ORD_TYPE OrdType;		//order type: Normal, vegan, VIP	                
 	double OrdMoney;	//Total order money
-	
+	int OrdSize;
 public:
-	ArrivalEvent(int eTime, int oID, ORD_TYPE oType);
+	ArrivalEvent(int eTime, int oID,int oSize,double oMoney, ORD_TYPE oType);
 	//Add more constructors if needed
 	
 	virtual void Execute(Restaurant *pRest);	//override execute function  lsa mat3amlsh 

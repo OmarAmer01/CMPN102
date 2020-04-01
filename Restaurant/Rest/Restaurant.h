@@ -8,6 +8,11 @@
 #include "..\Generic_DS\LinkedList.h"
 #include "..\Generic_DS\priorityQueue.h"
 #include "..\Events\Event.h"
+#include "..\Events\ArrivalEvent.h"
+#include "..\Cancellation_event.h"
+#include "..\PromotionEvent.h"
+#include <fstream>
+
 
 
 #include "Order.h"
@@ -31,11 +36,11 @@ private:
 	// TODO: Add More Data Members As Needed
 	//
 	Queue<Order*> VEGANOrder;  //  vegan queues
-	LinkedList<Order*>normalorder; //  vip linkedlist
+	Queue<Order*>normalorder; //  vip linkedlist
 	priorityQueue<Order*>VIPorder; // priority queue of vip
-	Queue<Cook*>VIPcook;
-	Queue<Cook*>NORMALcook;
-	Queue<Cook*>VEGANcook;
+	LinkedList<Cook*>VIPcook;
+	LinkedList<Cook*>NORMALcook;
+	LinkedList<Cook*>VEGANcook;
 	int TS;  //timestep
 	int SV;     //speed of vip cook
 	int SN;    //speed of normal cook
@@ -68,8 +73,8 @@ public:
 	void AddEvents(Event* ev); // add event to queue
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	void AddToVeganQueue(Order* po); // add frozen to queue
-	void AddNormalToList(Order* po); // add normal order to list
-	void AddToVIPArray(Order* ord, double a);  //add to vip array
+	void AddNormalToQueue(Order* po); // add normal order to list
+	void AddToVIPArray(Order* ord);  //add to vip array   //Omar AbdelGhani removed the priorty as it is by default in the order
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	ORD_TYPE Getordertype(char ordtype);   // convert the char to the order type
 	void CancelNormal(int id);  // lsa mat3amlsh
@@ -79,7 +84,9 @@ public:
 	void AddtoDemoQueue(Order* po);	//adds an order to the demo queue
 
 /// ================================================================================================== 
-
+	
+	//By Omar AbdelGhani
+	void LoadFile();
 
 
 };

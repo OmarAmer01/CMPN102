@@ -33,14 +33,14 @@ ORD_TYPE Order::GetType() const
 }
 
 
-void Order::SetDistance(int d)
+void Order::SetSize(int d)
 {
-	Distance = d>0?d:0;
+	Size = d>0?d:0;
 }
 
-int Order::GetDistance() const
+int Order::GetSize() const
 {
-	return Distance;
+	return Size;
 }
 
 
@@ -132,3 +132,7 @@ void Order::promotion(double extramoney)
 	}
 }
 
+
+int Order::GetPriority(){
+	return priority;
+}

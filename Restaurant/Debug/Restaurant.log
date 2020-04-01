@@ -1,1 +1,9 @@
-﻿  Restaurant.vcxproj -> C:\Users\mega\Documents\GitHub\CMPN102\Debug\Restaurant.exe
+﻿Build started 4/1/2020 11:31:58 AM.
+     1>Project "C:\Users\ASUS1\Documents\GitHub\CMPN102\Restaurant\Restaurant.vcxproj" on node 2 (Build target(s)).
+       Project file contains ToolsVersion="14.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.Cpp.Platform.targets(44,5): error MSB8020: The builds tools for v142 (Platform Toolset = 'v142') cannot be found. To build using the v142 build tools, either click the Project menu or right-click the solution, and then select "Update VC++ Projects...". Install v142 to build using the v142 build tools.
+     1>Done Building Project "C:\Users\ASUS1\Documents\GitHub\CMPN102\Restaurant\Restaurant.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.61

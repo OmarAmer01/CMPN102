@@ -4,7 +4,7 @@
 using namespace std;
 
 #include "Restaurant.h"
-#include "..\Events\ArrivalEvent.h"
+
 
 
 
@@ -91,14 +91,14 @@ void Restaurant::AddToVeganQueue(Order* po)
 	VEGANOrder.enqueue(po);
 }
 
-void Restaurant::AddNormalToList(Order* po)
+void Restaurant::AddNormalToQueue(Order* po)
 {
-	normalorder.InsertEnd(po);
+	normalorder.enqueue(po);
 }
 
-void Restaurant::AddToVIPArray(Order* ord, double a)
+void Restaurant::AddToVIPArray(Order* ord)
 {
-	VIPorder.enqueue(ord,a);
+	VIPorder.enqueue(ord,ord->GetPriority());
 }
 
 ORD_TYPE Restaurant::Getordertype(char ordtype)
@@ -234,4 +234,65 @@ void Restaurant::AddtoDemoQueue(Order *pOrd)
 /// ==> end of DEMO-related function
 //////////////////////////////////////////////////////////////////////////////////////////////
 
+//By OmarAbdelGhani
 
+void Restaurant::LoadFile(){
+	ifstream IF("input.txt",ios::in);
+
+	IF>>N; //initialize No. of Normal cooks
+	IF>>G; // Same for vegan
+	IF>>V; // and for VIP
+
+	IF>>SN; //Initialize speed of Normal Cooks
+	IF>>SG; // for Vegan Cooks
+	IF>>SV; //for VIP
+
+	IF>>BO; //Initialize No. of orders before break
+	IF>>BN; //Break duration for Normal cooks
+	IF>>BG; // for vegan
+	IF>>BV; // for VIP
+
+
+	IF>>AutoP; //Initialize NO. of time steps befor auto promotion
+
+	IF>>M; //Initialize No. of events
+
+	//Looping until i=m to initialize all events
+	char Etype; // for the type of event
+	int eTime; //time of arrival
+	int Id;   //Id of Order
+	char Otype; //type of order
+	ORD_TYPE T; //type of order in enum format
+	int Size; // Size of Order
+	double Money; // total money of order
+	for (int i=0;i<M;i++){
+		IF>>Etype;
+
+		if (Etype=='R'){
+			IF>>Otype;
+			T=Getordertype(Otype);
+			IF>>eTime;
+			IF>>Id;
+			IF>>Size;
+			IF>>Money;
+			ArrivalEvent *R=new ArrivalEvent(eTime,Id,Size,Money,T);
+
+		}
+		else if (Etype=='X'){
+			IF>>eTime;
+			IF>>Id;
+			Cancellation_event * X=new Cancellation_event(eTime,Id);
+
+		}
+		else if (Etype=='P'){
+
+
+
+		}
+
+
+	}
+
+
+
+}

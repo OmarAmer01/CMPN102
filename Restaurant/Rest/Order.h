@@ -23,7 +23,6 @@ protected:
 	int priority;
 	int Order_Size;
 	bool canceled;
-
 public:
 	Order(int ID, ORD_TYPE r_Type);
 	virtual ~Order();
@@ -66,6 +65,8 @@ public:
 
 	void cancel_order(bool s);
 	bool is_canceled();
+
+	int GetPriority();
 
 	void promotion(double extramoney);
 };
