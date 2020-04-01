@@ -1,9 +1,48 @@
-﻿Build started 4/1/2020 11:31:58 AM.
+﻿Build started 4/1/2020 12:38:45 PM.
      1>Project "C:\Users\ASUS1\Documents\GitHub\CMPN102\Restaurant\Restaurant.vcxproj" on node 2 (Build target(s)).
        Project file contains ToolsVersion="14.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.Cpp.Platform.targets(44,5): error MSB8020: The builds tools for v142 (Platform Toolset = 'v142') cannot be found. To build using the v142 build tools, either click the Project menu or right-click the solution, and then select "Update VC++ Projects...". Install v142 to build using the v142 build tools.
+     1>InitializeBuildStatus:
+         Creating "Debug\Restaurant.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Cancellation_event.cpp CMUgraphicsLib\CMUgraphics.cpp CMUgraphicsLib\colors.cpp CMUgraphicsLib\image.cpp CMUgraphicsLib\keyqueue.cpp CMUgraphicsLib\mousequeue.cpp CMUgraphicsLib\windowinput.cpp Demo_Main.cpp Events\Event.cpp Events\ArrivalEvent.cpp GUI\GUI.cpp PromotionEvent.cpp Rest\Cook.cpp Rest\Order.cpp Rest\Restaurant.cpp
+         Restaurant.cpp
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\rest\restaurant.cpp(101): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\rest\restaurant.cpp(132): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\rest\restaurant.cpp(165): error C2661: 'ArrivalEvent::ArrivalEvent' : no overloaded function takes 3 arguments
+         Order.cpp
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\rest\order.cpp(64): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\rest\order.cpp(100): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\rest\order.cpp(131): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+         Cook.cpp
+         PromotionEvent.cpp
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\promotionevent.cpp(5): error C2512: 'Event' : no appropriate default constructor available
+         GUI.cpp
+         ArrivalEvent.cpp
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\events\arrivalevent.cpp(24): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+         Event.cpp
+         Demo_Main.cpp
+         windowinput.cpp
+         mousequeue.cpp
+         keyqueue.cpp
+         image.cpp
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\cmugraphicslib\image.cpp(115): warning C4018: '<' : signed/unsigned mismatch
+         colors.cpp
+         CMUgraphics.cpp
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\cmugraphicslib\cmugraphics.cpp(751): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\cmugraphicslib\cmugraphics.cpp(1164): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\cmugraphicslib\cmugraphics.cpp(1171): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\cmugraphicslib\cmugraphics.cpp(1202): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\cmugraphicslib\cmugraphics.cpp(1210): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\asus1\documents\github\cmpn102\restaurant\cmugraphicslib\cmugraphics.cpp(1357): warning C4018: '>' : signed/unsigned mismatch
+         Cancellation_event.cpp
+         Generating Code...
      1>Done Building Project "C:\Users\ASUS1\Documents\GitHub\CMPN102\Restaurant\Restaurant.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:00.61
+Time Elapsed 00:00:10.62

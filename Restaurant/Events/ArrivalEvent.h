@@ -14,9 +14,10 @@ class ArrivalEvent: public Event
 	double OrdMoney;	//Total order money
 	int OrdSize;
 public:
-	ArrivalEvent(int eTime, int oID,int oSize,double oMoney, ORD_TYPE oType);
-	//Add more constructors if needed
 	
+	//Add more constructors if needed
+	ArrivalEvent::ArrivalEvent(int eTime, int oID, ORD_TYPE oType);
+	ArrivalEvent(int eTime, int oID,int oSize,double oMoney, ORD_TYPE oType);
 	virtual void Execute(Restaurant *pRest);	//override execute function  lsa mat3amlsh 
 
 };
