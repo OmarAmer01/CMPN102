@@ -1,5 +1,6 @@
 #pragma once
 #include"Events/Event.h"
+#include"Rest/Restaurant.h"
 
 
 class Cancellation_event:public Event

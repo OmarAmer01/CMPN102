@@ -97,8 +97,8 @@ public:
 	}
 
 	//[2]Find 
-	//searches for a given value in the list, returns true if found; false otherwise.
-	bool Find(T Key) {
+	//searches for a given value in the list, returns the node if found; null otherwise.
+	Node<T>* Find(T Key) {
 		Node<T>* ptr = Head;
 		while (ptr) {
 			if (ptr->getItem() == Key) {
