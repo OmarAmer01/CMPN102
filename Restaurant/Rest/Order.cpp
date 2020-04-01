@@ -33,14 +33,14 @@ ORD_TYPE Order::GetType() const
 }
 
 
-void Order::SetSize(int d)
+void Order::SetDistance(int d)
 {
-	Size = d>0?d:0;
+	Distance = d>0?d:0;
 }
 
-int Order::GetSize() const
+int Order::GetDistance() const
 {
-	return Size;
+	return Distance;
 }
 
 
