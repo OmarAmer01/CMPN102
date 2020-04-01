@@ -153,6 +153,43 @@ public:
 
 	}
 
+	//template <typename T>
+
+
+	bool priorityQueue<T>::dequeueWithOrderID(int ID, Order removed) { // bta5od el id w pass by refernce variable esmo removed dh ele hyt7t
+													// feh el order el mal8y
+		if (isEmpty()) {
+			return false; // OPERATION FAILED!!
+		}
+
+		if (getPtrToFront()->getItem()->GetID() == ID) {
+			if (!dequeue(removed)) {
+				return false;
+			}
+			dequeue(removed);
+			return true;
+
+		}
+
+		rNode<T>* trav = getPtrToFront();
+		rNode<T>* trav2 = trav->getNext();
+		while (trav2->getNext() != NULL) {
+			if (trav2->getItem()->GetID() == ID) {
+				trav->setNext(trav2->getNext());
+				removed = trav2->getItem();
+				delete trav2;
+
+				return true;
+			}
+			else {
+				trav2 = trav2->getNext();
+				trav = trav->getNext();
+			}
+
+
+		}
+	}
+
 	bool peekFrontItem(T& frntEntry) const
 	{
 		if (isEmpty())

@@ -2,49 +2,10 @@
   Demo_Main.cpp
   ArrivalEvent.cpp
 C:\Users\k\Documents\GitHub\CMPN102\Restaurant\Events\ArrivalEvent.cpp(30,18): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  PromotionEvent.cpp
-  Cook.cpp
   Restaurant.cpp
 C:\Users\k\Documents\GitHub\CMPN102\Restaurant\Rest\Restaurant.cpp(101,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\k\Documents\GitHub\CMPN102\Restaurant\Rest\Restaurant.cpp(132,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\k\Documents\GitHub\CMPN102\Restaurant\Rest\Restaurant.cpp(186,3): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
   Generating Code...
 C:\Users\k\Documents\GitHub\CMPN102\Restaurant\Rest\Restaurant.cpp(113): warning C4715: 'Restaurant::Getordertype': not all control paths return a value
-  jpegload.c
-C:\Users\k\Documents\GitHub\CMPN102\Restaurant\CMUgraphicsLib\jpegload.c(23,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  jcomapi.c
-  jcparam.c
-  jdapimin.c
-  jdapistd.c
-  jdatasrc.c
-  jdcoefct.c
-  jdcolor.c
-  jddctmgr.c
-  jdhuff.c
-  jdinput.c
-  jdmainct.c
-  jdmarker.c
-  jdmaster.c
-  jdmerge.c
-  jdphuff.c
-  jdpostct.c
-  jdsample.c
-  jdtrans.c
-  jerror.c
-C:\Users\k\Documents\GitHub\CMPN102\Restaurant\CMUgraphicsLib\jpeg\jerror.c(169,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\k\Documents\GitHub\CMPN102\Restaurant\CMUgraphicsLib\jpeg\jerror.c(171,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  Generating Code...
-  Compiling...
-  jidctflt.c
-  jidctfst.c
-  jidctint.c
-  jidctred.c
-  jmemmgr.c
-C:\Users\k\Documents\GitHub\CMPN102\Restaurant\CMUgraphicsLib\jpeg\jmemmgr.c(1103,19): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\k\Documents\GitHub\CMPN102\Restaurant\CMUgraphicsLib\jpeg\jmemmgr.c(1106,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  jmemnobs.c
-  jquant1.c
-  jquant2.c
-  jutils.c
-  Generating Code...
   Restaurant.vcxproj -> C:\Users\k\Documents\GitHub\CMPN102\Debug\Restaurant.exe
