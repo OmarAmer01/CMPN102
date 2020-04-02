@@ -27,6 +27,13 @@ public:
 	* Function: PrintList.
 	* prints the values of all nodes in a linked list.
 	*/
+	/*bool isEmpty(){// added by hamzawy
+	if (Head==nullptr){
+		return true ;
+		}else{
+		return false;
+		}
+	*/
 	void PrintList()	const
 	{
 		cout << "\nprinting list contents:\n\n";

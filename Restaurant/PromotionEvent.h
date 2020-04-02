@@ -1,5 +1,5 @@
 #pragma once
-#include "c:\users\asus1\documents\github\cmpn102\restaurant\events\event.h"
+#include "Events\Event.h"
 class PromotionEvent :
 	public Event
 {
