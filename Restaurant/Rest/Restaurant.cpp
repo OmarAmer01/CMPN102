@@ -359,13 +359,13 @@ void Restaurant::LoadFile(){
 			IF>>Size;
 			IF>>Money;
 			ArrivalEvent *R=new ArrivalEvent(eTime,Id,Size,Money,T);
-
+			this->AddEvents(R);
 		}
 		else if (Etype=='X'){
 			IF>>eTime;
 			IF>>Id;
 			Cancellation_event * X=new Cancellation_event(eTime,Id);
-
+			this->AddEvents(X);
 		}
 		else if (Etype=='P'){
 
