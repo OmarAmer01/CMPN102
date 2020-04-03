@@ -17,10 +17,63 @@ void Restaurant::RunSimulation()
 {
 	pGUI = new GUI;
 	PROG_MODE	mode = pGUI->getGUIMode();
+	
+		LoadFile();
 		
+		int x=1; // a variable to know after 5 time steps
 	switch (mode)	//Add a function for each mode in next phases
 	{
 	case MODE_INTR:
+				for(int i=0;i<20;i++){
+			while(EventsQueue.getPtrToFront()->getItem()->getEventTime()==i){//while the event time=the current time step
+				ArrivalEvent *p=dynamic_cast<ArrivalEvent*>(EventsQueue.getPtrToFront()->getItem());
+				if(p){    //if it is an arrival event
+					p->Execute(this); //generate an order and add it to the appropriate waiting list
+				}else if((Cancellation_event*)EventsQueue.getPtrToFront()->getItem()){    //if it is a cancellation event
+					if(!(normalorder.isEmpty())){
+						                                // delete the corresponding normal order if found
+                    
+				}
+				}
+				Event *u=EventsQueue.getPtrToFront()->getItem();
+				EventsQueue.dequeue(u);// get the next event
+			}
+			Order *Q=VIPorder.getPtrToFront()->getItem();
+			VIPorder.dequeue(Q);                            //each time step pick one order from each type and add it to inservice list
+			Inservicelist.InsertEnd(Q);                            // i used inserend so that in finished list the first order is the first order putted in inservice list
+
+			Order *t=VEGANOrder.getPtrToFront()->getItem();
+			VEGANOrder.dequeue(t);
+			Inservicelist.InsertEnd(t);
+
+			Order *w=normalorder.getPtrToFront()->getItem();
+			normalorder.dequeue(w);
+			Inservicelist.InsertEnd(w);
+			if(i==(5*x)){ //each 5 time steps pick one order from each type from inservice list to finished list
+				Order*e=Inservicelist.getHead()->getItem(); //the first order putted in inservice list which is a vip order
+				Finishedlist.InsertEnd(e);
+				Inservicelist.DeleteFirst(); //pick this order from in service list
+				 //put it in finished list
+
+		        Order*a=Inservicelist.getHead()->getItem();
+				Finishedlist.InsertEnd(a);
+				Inservicelist.DeleteFirst();
+				
+
+				Order*b=Inservicelist.getHead()->getItem();
+				Finishedlist.InsertEnd(b);
+				Inservicelist.DeleteFirst();
+				
+
+				x++; //so that we enter the if second time after 5 time steps when i = 5*x=5*2=10 and so on
+			}
+		pGUI->PrintMessage("click to display the output of next time step");
+			pGUI->waitForClick();
+			this->FillDrawingList();
+		
+				pGUI->UpdateInterface();
+		}
+		
 		break;
 	case MODE_STEP:
 		break;
@@ -62,12 +115,42 @@ Restaurant::~Restaurant()
 
 void Restaurant::FillDrawingList()
 {
-	//This function should be implemented in phase1
+	int v=0;// to count the number of waiting  vip orders
+		int ve=0;// to count the number of waiting  vegan orders
+		int n=0;// to count the number of waiting  normal orders
+			while(!(VIPorder.isEmpty())){// this 4 while loops to add all orders to the drawing list
+				pGUI->AddToDrawingList(VIPorder.getPtrToFront()->getItem());
+				Order *r=VIPorder.getPtrToFront()->getItem();
+				VIPorder.dequeue(r);
+				v++;
+			}
+			while(!(VEGANOrder.isEmpty())){
+				pGUI->AddToDrawingList(VEGANOrder.getPtrToFront()->getItem());
+				Order *r=VEGANOrder.getPtrToFront()->getItem();
+				VEGANOrder.dequeue(r);
+				ve++;
+			}
+				while(!(normalorder.isEmpty())){
+				pGUI->AddToDrawingList(normalorder.getPtrToFront()->getItem());
+				Order *r=normalorder.getPtrToFront()->getItem();
+				normalorder.dequeue(r);
+				n++;
+			}
+				while(Inservicelist.DeleteNode(Inservicelist.getHead()->getItem())){
+					Inservicelist.getHead()->getItem()->setStatus(SRV);
+					pGUI->AddToDrawingList(Inservicelist.getHead()->getItem());
+				}
+					while(Finishedlist.DeleteNode(Finishedlist.getHead()->getItem())){
+					Finishedlist.getHead()->getItem()->setStatus(DONE);
+					pGUI->AddToDrawingList(Finishedlist.getHead()->getItem());
+				}
+
+				//This function should be implemented in phase1
 	//It should add ALL orders and Cooks to the drawing list
 	//It should get orders from orders lists/queues/stacks/whatever (same for Cooks)
 	//To add orders it should call function  void GUI::AddToDrawingList(Order* pOrd);
 	//To add Cooks it should call function  void GUI::AddToDrawingList(Cook* pCc);
-
+	
 }
 
 
