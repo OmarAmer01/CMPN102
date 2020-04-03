@@ -17,9 +17,7 @@ ArrivalEvent::ArrivalEvent(int eTime, int oID,int oSize, double oMoney, ORD_TYPE
 	//OrdDistance=Odistance;
 
 }
-ORD_TYPE ArrivalEvent::getOrdType(){
-	return OrdType;
-}
+
 void ArrivalEvent::Execute(Restaurant* pRest)
 {
 	//This function should create an order and fills its data 

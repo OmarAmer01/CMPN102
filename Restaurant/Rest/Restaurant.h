@@ -41,8 +41,6 @@ private:
 	LinkedList<Cook*>VIPcook;
 	LinkedList<Cook*>NORMALcook;
 	LinkedList<Cook*>VEGANcook;
-	LinkedList<Order*>Inservicelist;
-	LinkedList<Order*>Finishedlist;
 	int TS;  //timestep
 	int SV;     //speed of vip cook
 	int SN;    //speed of normal cook
