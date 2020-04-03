@@ -61,6 +61,7 @@ public:
 	bool dequeueWithOrderID(int ID, Order& removed);
 	bool peekFront(T& frntEntry)  const; // Returns false if queue is empty, true if peeking was successful.
 	Node<T>* getPtrToFront();
+	bool dequeueWithOrderID(int ID, Order& removed);
 	void printQueueData();
 	T* toArray(int& count);	//returns array of T (array if items)
 	~Queue();
@@ -165,12 +166,16 @@ bool Queue<T>::dequeue(T& frntEntry)
 
 }
 template <typename T>
-bool Queue<T>::dequeueWithOrderID(int ID,Order& removed) { // bta5od el id w pass by refernce variable esmo removed dh ele hyt7t
+
+
+bool Queue<T>::dequeueWithOrderID(int ID, Order& removed) { // bta5od el id w pass by refernce variable esmo removed dh ele hyt7t
+
 												// feh el order el mal8y
 	if (isEmpty()) {
 		return false; // OPERATION FAILED!!
 	}
-	
+
+
 	if (getPtrToFront()->getItem()->GetID() == ID) {
 		if (!dequeue(removed)) {
 			return false;
