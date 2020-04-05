@@ -368,7 +368,11 @@ void Restaurant::LoadFile(){
 			this->AddEvents(X);
 		}
 		else if (Etype=='P'){
-
+			IF>>eTime;
+			IF>>Id;
+			IF>>Money;
+			PromotionEvent* P=new PromotionEvent(eTime,Id,Money);
+			this->AddEvents(P);
 
 
 		}
@@ -377,5 +381,12 @@ void Restaurant::LoadFile(){
 	}
 
 
+
+}
+
+Order Restaurant::CancelById(int id){
+	Order* O;
+	normalorder.dequeueWithOrderID(id,O);
+	return (*O);
 
 }

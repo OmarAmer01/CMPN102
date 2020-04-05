@@ -89,7 +89,7 @@ public:
 	
 	//By Omar AbdelGhani
 	void LoadFile();
-
+	Order CancelById(int);
 
 };
 
